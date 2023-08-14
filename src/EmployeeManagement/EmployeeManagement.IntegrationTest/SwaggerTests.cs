@@ -15,7 +15,7 @@ namespace EmployeeManagement.IntegrationTest
         public async Task SwaggerAPI_WhenCalled_ShouldReturnStatus200Ok()
         {
             //Act
-            var actual = await _httpClient.GetAsync($"{ApiRoutes.BaseUrl}/{ApiRoutes.SwaggerEndpoint}");
+            var actual = await _httpClient.GetAsync(ApiRoutes.SwaggerEndpoint);
 
             //Assert
             actual.StatusCode.Should().Be(HttpStatusCode.OK);
