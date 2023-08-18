@@ -17,7 +17,7 @@ namespace EmployeeManagement.IntegrationTest
         public async Task SwaggerAPI_WhenCalled_ShouldReturnStatus200Ok()
         {
             //Act
-            var actual = await _httpClient.GetAsync($"{ApiRoutes.BaseUrl}/{TestConstants.SwaggerEndpoint}");
+            var actual = await _httpClient.GetAsync(TestConstants.SwaggerEndpoint);
             var result = await actual.Content.ReadAsStringAsync();
 
             var jsonObject = JsonConvert.DeserializeObject<JObject>(result);
