@@ -27,6 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmployeeManagement.API\EmployeeManagement.API.csproj" />
+    <ProjectReference Include="..\EmployeeManagement.Domain\EmployeeManagement.Domain.csproj" />
   </ItemGroup>
 
 </Project>

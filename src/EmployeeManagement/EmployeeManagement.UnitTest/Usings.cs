@@ -7,3 +7,4 @@ global using AutoFixture;
 global using Moq;
 global using EmployeeManagement.Application.DTO;
 global using EmployeeManagement.Application.Services;
+global using EmployeeManagement.Domain.Repositories;

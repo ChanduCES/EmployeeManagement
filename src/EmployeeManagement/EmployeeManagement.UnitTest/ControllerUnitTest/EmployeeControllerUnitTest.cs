@@ -16,7 +16,7 @@
         }
 
         [Fact]
-        public async Task ShouldGetEmployeeList_WhenGetAllEmployees_IsCalled()
+        public async Task ShouldGetEmployeeList_WhenGetAllAsync_IsCalled()
         {
             //Arrange
             var employeeController = CreateEmployeeController();
