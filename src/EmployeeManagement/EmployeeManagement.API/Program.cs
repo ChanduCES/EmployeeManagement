@@ -1,3 +1,6 @@
+using EmployeeManagement.Domain.Repositories;
+using EmployeeManagement.Infrastructure.Repository;
+
 public partial class Program 
 {
     private static void Main(string[] args)
@@ -7,6 +10,9 @@ public partial class Program
         builder.Services.AddHealthChecks();
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+        builder.Services.AddAutoMapper(typeof(Program).Assembly);
         builder.Services.AddDbContext<EmployeeDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeConnString")));
         var app = builder.Build();
 
