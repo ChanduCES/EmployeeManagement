@@ -5,11 +5,11 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.API", "EmployeeManagement.API\EmployeeManagement.API.csproj", "{1B57CA1C-DA5E-45A4-8B7E-1B2017BB2C09}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.IntegrationTest", "EmployeeManagement.IntegrationTest\EmployeeManagement.IntegrationTest.csproj", "{8F3AA2FC-5AE9-40D2-AC37-8A835DBA0FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.IntegrationTests", "EmployeeManagement.IntegrationTest\EmployeeManagement.IntegrationTests.csproj", "{8F3AA2FC-5AE9-40D2-AC37-8A835DBA0FD4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Application", "EmployeeManagement.Application\EmployeeManagement.Application.csproj", "{23FCAA9E-0AC8-48BC-9C8B-F2F7DC888FC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.UnitTest", "EmployeeManagement.UnitTest\EmployeeManagement.UnitTest.csproj", "{80CF6028-DAC2-49A1-895D-0A7A94728B27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.UnitTests", "EmployeeManagement.UnitTest\EmployeeManagement.UnitTests.csproj", "{80CF6028-DAC2-49A1-895D-0A7A94728B27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

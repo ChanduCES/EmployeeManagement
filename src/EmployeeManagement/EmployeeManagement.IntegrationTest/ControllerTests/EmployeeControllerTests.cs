@@ -1,9 +1,9 @@
-﻿namespace EmployeeManagement.IntegrationTest.ControllerTests
+﻿namespace EmployeeManagement.IntegrationTests.ControllerTests
 {
-    public class EmployeeControllerTest : IClassFixture<WebApplicationFactory<Program>>
+    public class EmployeeControllerTests : IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly HttpClient _httpClient;
-        public EmployeeControllerTest(WebApplicationFactory<Program> factory)
+        public EmployeeControllerTests(WebApplicationFactory<Program> factory)
         {
             _httpClient = factory.CreateClient();
         }
@@ -13,9 +13,11 @@
         {
             //Act
             var actual = await _httpClient.GetAsync($"{ApiRoutes.BaseUrl}/{ApiRoutes.Employee}");
+            var result = await actual.Content.ReadFromJsonAsync<List<EmployeesDTO>>();
 
             //Assert
             actual.StatusCode.Should().Be(HttpStatusCode.OK);
+            result.Should().NotBeNullOrEmpty();
         }
     }
 }

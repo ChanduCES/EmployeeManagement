@@ -1,4 +1,4 @@
-﻿namespace EmployeeManagement.IntegrationTest.Constants
+﻿namespace EmployeeManagement.IntegrationTests.Constants
 {
     public static class TestConstants
     {

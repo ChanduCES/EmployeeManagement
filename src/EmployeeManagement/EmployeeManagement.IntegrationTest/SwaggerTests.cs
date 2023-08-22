@@ -1,8 +1,8 @@
-﻿using EmployeeManagement.IntegrationTest.Constants;
+﻿using EmployeeManagement.IntegrationTests.Constants;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 
-namespace EmployeeManagement.IntegrationTest
+namespace EmployeeManagement.IntegrationTests
 {
     public class SwaggerTests : IClassFixture<WebApplicationFactory<Program>>
     {

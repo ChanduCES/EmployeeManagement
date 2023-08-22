@@ -1,11 +1,11 @@
-﻿namespace EmployeeManagement.UnitTest.ControllerUnitTest
+﻿namespace EmployeeManagement.UnitTests.ControllerUnitTests
 {
-    public class EmployeeControllerUnitTest
+    public class EmployeeControllerTests
     {
         private readonly Mock<IEmployeeService> _employeeServiceMock;
         private readonly Fixture _fixture;
 
-        public EmployeeControllerUnitTest()
+        public EmployeeControllerTests()
         {
             _fixture = new Fixture();
             _employeeServiceMock = new Mock<IEmployeeService>();
