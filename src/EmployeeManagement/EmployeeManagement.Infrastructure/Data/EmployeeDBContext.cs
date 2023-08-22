@@ -11,5 +11,6 @@ namespace EmployeeManagement.Infrastructure.Data
         }
 
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Address> Addresses { get; set; }
     }
 }

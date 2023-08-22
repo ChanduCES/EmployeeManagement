@@ -5,6 +5,8 @@ namespace EmployeeManagement.Domain.Entities
 {
     public class Employee
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

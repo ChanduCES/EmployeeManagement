@@ -13,12 +13,12 @@ namespace EmployeeManagement.UnitTest.RepositoryUnitTest
         public EmployeeRepositoryUnitTest()
         {
             _fixture = new Fixture();
-            _employeeRepository = new EmployeeRepository();
             var options = new DbContextOptionsBuilder<EmployeeDBContext>().UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
             .Options;
 
             _employeeContext = new EmployeeDBContext(options);
             _employeeContext.Database.EnsureCreated();
+            _employeeRepository = new EmployeeRepository(_employeeContext);
         }
 
         [Fact]
