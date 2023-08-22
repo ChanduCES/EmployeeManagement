@@ -1,6 +1,6 @@
 ﻿namespace EmployeeManagement.Application.DTO
 {
-    public class GetEmployeesDTO
+    public class EmployeesDTO
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }

@@ -20,7 +20,7 @@
         {
             //Arrange
             var employeeController = CreateEmployeeController();
-            List<GetEmployeesDTO> employees = _fixture.CreateMany<GetEmployeesDTO>().ToList();
+            List<EmployeesDTO> employees = _fixture.CreateMany<EmployeesDTO>().ToList();
             _employeeServiceMock.Setup(x => x.GetAllAsync()).ReturnsAsync(employees);
 
             //Act
