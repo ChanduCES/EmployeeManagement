@@ -20,7 +20,7 @@
         {
             //Arrange
             var employeeController = CreateEmployeeController();
-            List<GetAllEmployeesDTO> employees = _fixture.CreateMany<GetAllEmployeesDTO>().ToList();
+            List<GetEmployeesDTO> employees = _fixture.CreateMany<GetEmployeesDTO>().ToList();
             _employeeServiceMock.Setup(x => x.GetAllAsync()).ReturnsAsync(employees);
 
             //Act
@@ -28,7 +28,7 @@
 
             //Assert
             var employeeResult = result.Result as OkObjectResult;
-            employeeResult?.StatusCode.Should().Be((int)HttpStatusCode.OK);
+            employeeResult?.StatusCode.Should().Be(StatusCodes.Status200OK);
             employeeResult?.Value.Should().BeEquivalentTo(employees);
         }
     }

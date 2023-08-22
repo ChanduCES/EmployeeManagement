@@ -5,7 +5,7 @@
     public class EmployeeController : ControllerBase
     {
         [HttpGet]
-        public async Task<ActionResult<List<GetAllEmployeesDTO>>> GetAllAsync()
+        public async Task<ActionResult<List<GetEmployeesDTO>>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
