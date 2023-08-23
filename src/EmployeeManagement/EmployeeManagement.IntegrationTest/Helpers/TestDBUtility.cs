@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement.IntegrationTests.Helpers
 {
-    public static class TestDBSeeding
+    public static class TestDBUtility
     {
         public static List<Address> FetchSeedingAddresses(List<Employee> employees)
         {

@@ -16,16 +16,14 @@ namespace EmployeeManagement.IntegrationTests.ControllerTests
             _appFactory = factory;
            _httpClient = _appFactory.CreateClient();
             _mapper = new MapperConfiguration(cfg => cfg.AddProfile<EmployeeProfile>()).CreateMapper();
-
-            
         }
 
         [Fact]
         public async Task ShouldGetEmployeeList_WhenCalled_GetAllEmployeesAsync()
         {
             //Arrange
-            TestDBSeeding.InitializeDbForTests(_appFactory);
-            var employeeDto = _mapper.Map<List<EmployeesDTO>>(TestDBSeeding.FetchSeedingEmployees());
+            TestDBUtility.InitializeDbForTests(_appFactory);
+            var employeeDto = _mapper.Map<List<EmployeesDTO>>(TestDBUtility.FetchSeedingEmployees());
 
             //Act
             var actual = await _httpClient.GetAsync($"{ApiRoutes.BaseUrl}/{ApiRoutes.Employee}");
