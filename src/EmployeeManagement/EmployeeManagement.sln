@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.API", "EmployeeManagement.API\EmployeeManagement.API.csproj", "{1B57CA1C-DA5E-45A4-8B7E-1B2017BB2C09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.API", "EmployeeManagement.API\EmployeeManagement.API.csproj", "{1B57CA1C-DA5E-45A4-8B7E-1B2017BB2C09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.IntegrationTest", "EmployeeManagement.IntegrationTest\EmployeeManagement.IntegrationTest.csproj", "{8F3AA2FC-5AE9-40D2-AC37-8A835DBA0FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.IntegrationTests", "EmployeeManagement.IntegrationTest\EmployeeManagement.IntegrationTests.csproj", "{8F3AA2FC-5AE9-40D2-AC37-8A835DBA0FD4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.Application", "EmployeeManagement.Application\EmployeeManagement.Application.csproj", "{23FCAA9E-0AC8-48BC-9C8B-F2F7DC888FC5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagement.UnitTests", "EmployeeManagement.UnitTest\EmployeeManagement.UnitTests.csproj", "{80CF6028-DAC2-49A1-895D-0A7A94728B27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Domain", "EmployeeManagement.Domain\EmployeeManagement.Domain.csproj", "{05F4C79E-0A80-4061-8E73-78DBEE5BC8F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagement.Infrastructure", "EmployeeManagement.Infrastructure\EmployeeManagement.Infrastructure.csproj", "{ECAE7239-BBE1-4AFB-903A-040CC39A5C0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,22 @@ Global
 		{8F3AA2FC-5AE9-40D2-AC37-8A835DBA0FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F3AA2FC-5AE9-40D2-AC37-8A835DBA0FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F3AA2FC-5AE9-40D2-AC37-8A835DBA0FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23FCAA9E-0AC8-48BC-9C8B-F2F7DC888FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23FCAA9E-0AC8-48BC-9C8B-F2F7DC888FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23FCAA9E-0AC8-48BC-9C8B-F2F7DC888FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23FCAA9E-0AC8-48BC-9C8B-F2F7DC888FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80CF6028-DAC2-49A1-895D-0A7A94728B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80CF6028-DAC2-49A1-895D-0A7A94728B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80CF6028-DAC2-49A1-895D-0A7A94728B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80CF6028-DAC2-49A1-895D-0A7A94728B27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F4C79E-0A80-4061-8E73-78DBEE5BC8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F4C79E-0A80-4061-8E73-78DBEE5BC8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F4C79E-0A80-4061-8E73-78DBEE5BC8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F4C79E-0A80-4061-8E73-78DBEE5BC8F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECAE7239-BBE1-4AFB-903A-040CC39A5C0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECAE7239-BBE1-4AFB-903A-040CC39A5C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECAE7239-BBE1-4AFB-903A-040CC39A5C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECAE7239-BBE1-4AFB-903A-040CC39A5C0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

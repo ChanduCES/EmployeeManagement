@@ -1,4 +1,4 @@
-﻿namespace EmployeeManagement.IntegrationTest
+﻿namespace EmployeeManagement.IntegrationTests
 {
     public class HealthCheckTest : IClassFixture<WebApplicationFactory<Program>>
     {

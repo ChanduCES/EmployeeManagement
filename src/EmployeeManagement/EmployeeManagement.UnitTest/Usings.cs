@@ -1,0 +1,9 @@
+global using Xunit;
+global using FluentAssertions;
+global using EmployeeManagement.API.Controllers;
+global using Microsoft.AspNetCore.Mvc;
+global using AutoFixture;
+global using Moq;
+global using EmployeeManagement.Application.DTO;
+global using EmployeeManagement.Application.Services;
+global using Microsoft.AspNetCore.Http;

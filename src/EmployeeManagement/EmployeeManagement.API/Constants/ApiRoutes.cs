@@ -4,5 +4,6 @@
     {
         public const string BaseUrl = "api";
         public const string HealthCheckAPI = "HealthCheck";
+        public const string Employee = "Employee";
     }
 }

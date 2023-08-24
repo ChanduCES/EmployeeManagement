@@ -1,7 +1,20 @@
-var builder = WebApplication.CreateBuilder(args);
+using EmployeeManagement.API.Constants;
 
-var app = builder.Build();
+public partial class Program {
+    private static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-app.Run();
+        builder.Services.AddHealthChecks();
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+        var app = builder.Build();
+
+        app.MapHealthChecks($"{ApiRoutes.BaseUrl}/{ApiRoutes.HealthCheckAPI}");
+        app.UseSwagger();
+
+        app.Run();
+    }
+}
 
 public partial class Program { }
