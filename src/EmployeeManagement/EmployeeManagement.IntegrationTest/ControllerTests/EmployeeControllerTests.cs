@@ -22,8 +22,8 @@ namespace EmployeeManagement.IntegrationTests.ControllerTests
         public async Task ShouldGetEmployeeList_WhenCalled_GetAllEmployeesAsync()
         {
             //Arrange
-            TestDBUtility.InitializeDbForTests(_appFactory);
-            var employeeDto = _mapper.Map<List<EmployeesDTO>>(TestDBUtility.FetchSeedingEmployees());
+            TestDBSampleData.InitializeDbForTests(_appFactory);
+            var employeeDto = _mapper.Map<List<EmployeesDTO>>(TestDBSampleData.FetchSeedingEmployees());
 
             //Act
             var actual = await _httpClient.GetAsync($"{ApiRoutes.BaseUrl}/{ApiRoutes.Employee}");
