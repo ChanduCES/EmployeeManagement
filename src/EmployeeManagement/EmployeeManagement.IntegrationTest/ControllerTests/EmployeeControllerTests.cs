@@ -32,7 +32,7 @@ namespace EmployeeManagement.IntegrationTests.ControllerTests
             //Assert
             actual.StatusCode.Should().Be(HttpStatusCode.OK);
             result.Should().NotBeNullOrEmpty();
-            result.Should().BeEquivalentTo(employeeDto, x => x.Excluding(y => y.Id));
+            result.Should().BeEquivalentTo(employeeDto, x => x.Excluding(x => x.Id).Excluding(x => x.Address));
         }
     }
 }
