@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using EmployeeManagement.Application.Profiles;
-using EmployeeManagement.Infrastructure.Data;
 using EmployeeManagement.IntegrationTests.Helpers;
 
 namespace EmployeeManagement.IntegrationTests.ControllerTests
@@ -23,11 +22,11 @@ namespace EmployeeManagement.IntegrationTests.ControllerTests
         {
             //Arrange
             TestDBSampleData.InitializeDbForTests(_appFactory);
-            var employeeDto = _mapper.Map<List<EmployeesDTO>>(TestDBSampleData.FetchSeedingEmployees());
+            var employeeDto = _mapper.Map<List<EmployeeDTO>>(TestDBSampleData.FetchSeedingEmployees());
 
             //Act
             var actual = await _httpClient.GetAsync($"{ApiRoutes.BaseUrl}/{ApiRoutes.Employee}");
-            var result = await actual.Content.ReadFromJsonAsync<List<EmployeesDTO>>();
+            var result = await actual.Content.ReadFromJsonAsync<List<EmployeeDTO>>();
 
             //Assert
             actual.StatusCode.Should().Be(HttpStatusCode.OK);

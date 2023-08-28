@@ -1,4 +1,4 @@
-﻿namespace EmployeeManagement.UnitTests.ControllerUnitTests
+﻿namespace EmployeeManagement.UnitTests.ControllerTests
 {
     public class EmployeeControllerTests
     {
@@ -20,7 +20,7 @@
         {
             //Arrange
             var employeeController = CreateEmployeeController();
-            List<EmployeesDTO> employees = _fixture.CreateMany<EmployeesDTO>().ToList();
+            List<EmployeeDTO> employees = _fixture.CreateMany<EmployeeDTO>().ToList();
             _employeeServiceMock.Setup(x => x.GetAllAsync()).ReturnsAsync(employees);
 
             //Act

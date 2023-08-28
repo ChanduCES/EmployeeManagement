@@ -4,6 +4,6 @@ namespace EmployeeManagement.Application.Services
 {
     public interface IEmployeeService
     {
-        Task<List<EmployeesDTO>> GetAllAsync();
+        Task<List<EmployeeDTO>> GetAllAsync();
     }
 }

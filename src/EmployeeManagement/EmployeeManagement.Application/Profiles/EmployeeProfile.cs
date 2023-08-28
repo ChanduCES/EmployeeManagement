@@ -8,7 +8,7 @@ namespace EmployeeManagement.Application.Profiles
     {
         public EmployeeProfile()
         {
-            CreateMap<Employee, EmployeesDTO>();
+            CreateMap<Employee, EmployeeDTO>();
             CreateMap<Address, AddressDTO>();
         }
     }
