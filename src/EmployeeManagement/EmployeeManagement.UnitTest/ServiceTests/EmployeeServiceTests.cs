@@ -34,7 +34,6 @@ namespace EmployeeManagement.UnitTest.ServiceUnitTest
 
             //Assert
             actual.Should().BeEquivalentTo(employeeDto);
-            actual.Count().Should().Be(employeeDto.Count());
         }
     }
 }

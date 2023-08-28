@@ -33,7 +33,6 @@ namespace EmployeeManagement.UnitTests.RepositoryTests
             var result = await _employeeRepository.GetAllAsync();
 
             //Assert
-            result.Count().Should().Be(employees.Count());
             result.Should().BeEquivalentTo(employees);
         }
     }
