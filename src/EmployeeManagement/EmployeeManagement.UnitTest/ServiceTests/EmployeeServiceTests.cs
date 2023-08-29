@@ -2,6 +2,7 @@
 using EmployeeManagement.Application.Profiles;
 using EmployeeManagement.Domain.Entities;
 using EmployeeManagement.Domain.Repository;
+using System.Collections.Generic;
 
 namespace EmployeeManagement.UnitTest.ServiceUnitTest
 {
@@ -27,7 +28,7 @@ namespace EmployeeManagement.UnitTest.ServiceUnitTest
             //Arrange
             List<Employee> employees = _fixture.CreateMany<Employee>().ToList();
             _employeeRepository.Setup(x => x.GetAllAsync()).ReturnsAsync(employees);
-            List<EmployeeDTO> employeeDto = _mapper.Map<List<EmployeeDTO>>(employees);
+            List<EmployeeDTO> employeeDto = _mapper.Map<List <Employee>, List <EmployeeDTO>>(employees);
 
             //Act
             var actual = await _employeeService.GetAllAsync();
