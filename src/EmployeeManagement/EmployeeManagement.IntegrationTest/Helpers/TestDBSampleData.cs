@@ -1,4 +1,5 @@
-﻿using EmployeeManagement.Domain.Entities;
+﻿using Bogus;
+using EmployeeManagement.Domain.Entities;
 using EmployeeManagement.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,22 +9,31 @@ namespace EmployeeManagement.IntegrationTests.Helpers
     {
         public static List<Address> FetchSeedingAddresses(List<Employee> employees)
         {
-            return new List<Address>()
+            List<Address> addresses = new List<Address>();
+            foreach (Employee employee in employees)
             {
-                new Address() { EmployeeId = employees[0].Id, HouseNo = "Mann", Street = "123 street", City = "Bglore", State ="Karnataka", PostalCode = "690590"  },
-                new Address() { EmployeeId = employees[1].Id, HouseNo = "45/253", Street = "church street", City = "Chennai", State ="Tamil Nadu", PostalCode = "622390"  },
-                new Address() { EmployeeId = employees[2].Id, HouseNo = "AS2/25", Street = "2nd street", City = "Kochi", State ="Kerala", PostalCode = "686690"  },
-            };
+                addresses.Add(new Faker<Address>()
+                                .RuleFor(x => x.Id, f => Guid.NewGuid())
+                                .RuleFor(x => x.EmployeeId, f => employee.Id)
+                                .RuleFor(x => x.HouseNo, f => f.Address.BuildingNumber())
+                                .RuleFor(x => x.Street, f => f.Address.StreetAddress())
+                                .RuleFor(x => x.City, f => f.Address.City())
+                                .RuleFor(x => x.State, f => f.Address.State())
+                                .RuleFor(x => x.PostalCode, f => f.Address.ZipCode()));
+            }
+            
+            return addresses;
         }
 
         public static List<Employee> FetchSeedingEmployees()
         {
-            return new List<Employee>()
-            {
-                new Employee() { FirstName = "Rahul", LastName = "Joseph", Email = "rj@gmail.com"},
-                new Employee() { FirstName = "Chandu", LastName = "C", Email = "chan2@gmail.com"},
-                new Employee() { FirstName = "Manuel", LastName = "Jose", Email = "Manu@gmail.com"}
-            };
+            var employees = new Faker<Employee>()
+                                .RuleFor(x => x.Id, f => Guid.NewGuid())
+                                .RuleFor(x => x.FirstName, f => f.Person.FirstName)
+                                .RuleFor(x => x.LastName, f => f.Person.LastName)
+                                .RuleFor(x => x.Email, f => f.Person.Email)
+                                .GenerateBetween(0,10);
+            return employees;
         }
 
         public static async void InitializeDbForTests(CustomWebApplicationFactory<Program> factory)
@@ -43,6 +53,7 @@ namespace EmployeeManagement.IntegrationTests.Helpers
             var addresses = FetchSeedingAddresses(emp);
             dbContext.Addresses.AddRange(addresses);
             dbContext.SaveChanges();
+
         }
     }
 }
