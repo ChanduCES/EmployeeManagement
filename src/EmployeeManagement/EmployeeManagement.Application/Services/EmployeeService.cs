@@ -1,4 +1,6 @@
-﻿using EmployeeManagement.Application.DTO;
+﻿using AutoMapper;
+using EmployeeManagement.Application.DTO;
+using EmployeeManagement.Domain.Entities;
 using EmployeeManagement.Domain.Repository;
 
 namespace EmployeeManagement.Application.Services
@@ -6,15 +8,18 @@ namespace EmployeeManagement.Application.Services
     public class EmployeeService : IEmployeeService
     {
         private readonly IEmployeeRepository _employeeRepository;
+        private readonly IMapper _mapper;
 
-        public EmployeeService(IEmployeeRepository employeeRepository)
+        public EmployeeService(IEmployeeRepository employeeRepository, IMapper mapper)
         {
             _employeeRepository = employeeRepository;
+            _mapper = mapper;
         }
 
-        public Task<List<EmployeeDTO>> GetAllAsync()
+        public async Task<List<EmployeeDTO>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            List<Employee> employees = await _employeeRepository.GetAllAsync();
+            return _mapper.Map< List <Employee>, List <EmployeeDTO>>(employees);
         }
     }
 }
