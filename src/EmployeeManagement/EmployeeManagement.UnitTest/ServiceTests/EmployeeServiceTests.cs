@@ -17,9 +17,9 @@ namespace EmployeeManagement.UnitTest.ServiceUnitTest
         {
             _fixture = new Fixture();
             _employeeRepository = new Mock<IEmployeeRepository>();
-            _employeeService = new EmployeeService(_employeeRepository.Object);
             var configuration = new MapperConfiguration(cfg => cfg.AddProfile(new EmployeeProfile()));
             _mapper = new Mapper(configuration);
+            _employeeService = new EmployeeService(_employeeRepository.Object, _mapper);
         }
 
         [Fact]

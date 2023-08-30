@@ -7,7 +7,10 @@ namespace EmployeeManagement.IntegrationTests.Helpers
 {
     public static class TestDBSampleData
     {
-        public static List<Address> FetchSeedingAddresses(List<Employee> employees)
+        private static List<Employee> _employees = GenerateEmployees();
+        private static List<Address> _addresses;
+
+        private static List<Address> GenerateAddresses(List<Employee> employees)
         {
             List<Address> addresses = new List<Address>();
             foreach (Employee employee in employees)
@@ -25,7 +28,7 @@ namespace EmployeeManagement.IntegrationTests.Helpers
             return addresses;
         }
 
-        public static List<Employee> FetchSeedingEmployees()
+        private static List<Employee> GenerateEmployees()
         {
             var employees = new Faker<Employee>()
                                 .RuleFor(x => x.Id, f => Guid.NewGuid())
@@ -33,7 +36,13 @@ namespace EmployeeManagement.IntegrationTests.Helpers
                                 .RuleFor(x => x.LastName, f => f.Person.LastName)
                                 .RuleFor(x => x.Email, f => f.Person.Email)
                                 .GenerateBetween(0,10);
+            _addresses = GenerateAddresses(employees);
             return employees;
+        }
+
+        public static List<Employee> GetEmployees() 
+        {
+            return _employees;
         }
 
         public static async void InitializeDbForTests(CustomWebApplicationFactory<Program> factory)
@@ -43,15 +52,13 @@ namespace EmployeeManagement.IntegrationTests.Helpers
 
             //Adding employee seed data
             dbContext.Employees.RemoveRange(dbContext.Employees);
-            var employees = FetchSeedingEmployees();
-            dbContext.Employees.AddRange(employees);
+            dbContext.Employees.AddRange(_employees);
             dbContext.SaveChanges();
 
             //Adding addresses seed data
             dbContext.Addresses.RemoveRange(dbContext.Addresses);
             var emp = await dbContext.Employees.ToListAsync();
-            var addresses = FetchSeedingAddresses(emp);
-            dbContext.Addresses.AddRange(addresses);
+            dbContext.Addresses.AddRange(_addresses);
             dbContext.SaveChanges();
 
         }

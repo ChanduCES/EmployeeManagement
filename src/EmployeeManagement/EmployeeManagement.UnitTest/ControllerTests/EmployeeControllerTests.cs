@@ -12,7 +12,7 @@
         }
         private EmployeeController CreateEmployeeController()
         {
-            return new EmployeeController();
+            return new EmployeeController(_employeeServiceMock.Object);
         }
 
         [Fact]

@@ -1,6 +1,7 @@
 ﻿using EmployeeManagement.Domain.Entities;
 using EmployeeManagement.Domain.Repository;
 using EmployeeManagement.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeManagement.Infrastructure.Repository
 {
@@ -15,7 +16,8 @@ namespace EmployeeManagement.Infrastructure.Repository
 
         public async Task<List<Employee>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            List<Employee> employees = await _context.Employees.ToListAsync();
+            return employees;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace EmployeeManagement.IntegrationTests.ControllerTests
         {
             //Arrange
             TestDBSampleData.InitializeDbForTests(_appFactory);
-            List<EmployeeDTO> employeeDto = _mapper.Map<List<Employee>, List<EmployeeDTO>>(TestDBSampleData.FetchSeedingEmployees());
+            List<EmployeeDTO> employeeDto = _mapper.Map<List<Employee>, List<EmployeeDTO>>(TestDBSampleData.GetEmployees());
 
             //Act
             var actual = await _httpClient.GetAsync($"{ApiRoutes.BaseUrl}/{ApiRoutes.Employee}");
